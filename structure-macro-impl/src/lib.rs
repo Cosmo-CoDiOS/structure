@@ -2,9 +2,25 @@
 
 extern crate proc_macro;
 
+#[cfg(not(feature = "std"))]
+extern crate core;
+#[cfg(not(feature = "std"))]
+extern crate alloc;
+
+#[cfg(not(feature = "std"))]
+use alloc::string::String;
+#[cfg(not(feature = "std"))]
+use core::mem;
+#[cfg(not(feature = "std"))]
+use core::ffi::c_void;
+
+#[cfg(feature = "std")]
 use std::mem;
+#[cfg(feature = "std")]
 use std::os::raw::c_void;
+#[cfg(feature = "std")]
 use std::string::String;
+
 use proc_macro2::{Ident, Span, TokenStream};
 use quote::quote;
 

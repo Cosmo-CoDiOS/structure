@@ -7,13 +7,6 @@ use alloc::string::String;
 use core::mem;
 use core::ffi::c_void;
 
-#[cfg(feature = "std")]
-use std::mem;
-#[cfg(feature = "std")]
-use std::os::raw::c_void;
-#[cfg(feature = "std")]
-use std::string::String;
-
 use proc_macro2::{Ident, Span, TokenStream};
 use quote::quote;
 

@@ -1,17 +1,10 @@
 #![recursion_limit = "128"]
 
 extern crate proc_macro;
-
-#[cfg(not(feature = "std"))]
-extern crate core;
-#[cfg(not(feature = "std"))]
 extern crate alloc;
 
-#[cfg(not(feature = "std"))]
 use alloc::string::String;
-#[cfg(not(feature = "std"))]
 use core::mem;
-#[cfg(not(feature = "std"))]
 use core::ffi::c_void;
 
 #[cfg(feature = "std")]
